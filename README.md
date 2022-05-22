@@ -3,20 +3,96 @@ Mysql cheat sheet and some useful technique
 
 # Mysql With Nodejs 
 ## Connection
+```
+const mysql = require("mysql");
+const con = mysql.createConnection({
+  host: "localhost",
+  user: "saravana",
+  password: "password",
+});
+con.connect((err) => {
+  if (err) throw err;
+  console.log("Connected successfully");
+});
 
+```
 ## Create a Database
+```
+const mysql = require("mysql");
+const con = mysql.createConnection({
+  host: "localhost",
+  user: "saravana",
+  password: "password",
+});
+con.connect((err) => {
+  if (err) throw err;
+  console.log("Connected successfully");
+  const sql = "CREATE DATABASE mydb";
+  con.query(sql, (err, result) => {
+    if (err) throw err;
+    console.log(result);
+  });
+});
 
-## Create a table
+```
 
-## Insert a value
+## Create a table User
+```
+const mysql = require("mysql");
+const con = mysql.createConnection({
+  host: "localhost",
+  user: "saravana",
+  password: "password",
+  database: "mydb",
+});
+con.connect((err) => {
+  if (err) throw err;
+  console.log("Connected successfully");
+  const sql = `CREATE TABLE user(id INT auto_increment ,first_name varchar(100),last_name varchar(100),email varchar(100) ,register_date DATETIME , primary key(id))`;
+  con.query(sql, (err, result) => {
+    if (err) throw err;
+    console.log(result);
+  });
+});
+
+```
+
+## Insert a value into a user table
+```
+const mysql = require("mysql");
+const con = mysql.createConnection({
+  host: "localhost",
+  user: "saravana",
+  password: "password",
+  database: "mydb",
+});
+con.connect((err) => {
+  if (err) throw err;
+  console.log("Connected successfully");
+  const sql = `INSERT INTO  user(first_name,last_name,email,register_date) values("saravana","k","saravana@gmail.com",now())`;
+  con.query(sql, (err, result) => {
+    if (err) throw err;
+    console.log(result);
+  });
+});
+
+```
 
 ## Simple signup and signIn page 
+```
+```
 
-
-## User Login
+## MYSQL User Login
 ```
 mysql -u root -p 
 ```
+## Mysql Grant All Permission
+```
+ALTER USER 'santhosh'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+GRANT ALL PRIVILEGES ON * . * TO 'santhosh'@'localhost';
+flush privileges;
+```
+
 ## Show users
 ```
 SELECT User, Host FROM mysql.user;
