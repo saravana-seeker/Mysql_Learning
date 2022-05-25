@@ -4,7 +4,7 @@
 ## Install Modules
 
 ## Create Database
-```
+```jsx
 const mysql = require("mysql");
 const express = require("express");
 const app = express();
@@ -27,7 +27,7 @@ con.connect((err) => {
 ```
 
 ## Create a User tabel with NOT NULL Values
-```
+```js
 con.connect((err) => {
   if (err) throw err;
   console.log("Connected successfully ");
@@ -41,7 +41,7 @@ con.connect((err) => {
 });
 ```
 ## Insert Into user table
-```
+```js
 con.connect((err) => {
   if (err) throw err;
   console.log("Connected successfully ");
@@ -54,7 +54,7 @@ con.connect((err) => {
 
 ```
 ## Register User 
-```
+```js
 // Register --> name ,email ,and password
 app.post("/register", async (req, res) => {
   const { name, email, password } = req.body;
@@ -80,7 +80,7 @@ app.post("/register", async (req, res) => {
 
 ```
 ## Login Using bcryptjs
-```
+```js
 
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
@@ -109,7 +109,7 @@ app.post("/login", async (req, res) => {
 });
 ```
 ## Final Login and Signup 
-```
+```jsx
 const mysql = require("mysql");
 const express = require("express");
 const app = express();
