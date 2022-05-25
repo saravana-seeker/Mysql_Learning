@@ -3,7 +3,7 @@ Mysql cheat sheet and some useful technique
 
 # Mysql With Nodejs 
 ## Connection
-```
+```jsx
 const mysql = require("mysql");
 const con = mysql.createConnection({
   host: "localhost",
@@ -17,7 +17,7 @@ con.connect((err) => {
 
 ```
 ## Create a Database
-```
+```jsx
 const mysql = require("mysql");
 const con = mysql.createConnection({
   host: "localhost",
@@ -37,7 +37,7 @@ con.connect((err) => {
 ```
 
 ## Create a table User
-```
+```jsx
 const mysql = require("mysql");
 const con = mysql.createConnection({
   host: "localhost",
@@ -58,7 +58,7 @@ con.connect((err) => {
 ```
 
 ## Insert a value into a user table
-```
+```jsx
 const mysql = require("mysql");
 const con = mysql.createConnection({
   host: "localhost",
